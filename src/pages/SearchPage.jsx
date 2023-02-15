@@ -9,7 +9,10 @@ function SearchPage({ closeOverlay }) {
   const { products, filteredProductsForSearch, setFilteredProductsForSearch } =
     useContext(ProductContext);
   return (
-    <section onClick={closeOverlay} className=" min-h-screen relative pb-60">
+    <section
+      onClick={closeOverlay}
+      className=" min-h-screen relative pt-[200px] pb-60"
+    >
       <ScrollToTop />
       <div className="frame flex flex-col justify-center items-start gap-y-10">
         <div className=" flex flex-col justify-center items-end">

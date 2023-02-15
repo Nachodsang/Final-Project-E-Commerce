@@ -37,11 +37,11 @@ const ProductDetails = ({ closeOverlay }) => {
   const finalPrice = (((100 - discountPercentage) / 100) * price).toFixed(2);
 
   useEffect(() => {
-    setIsLoading(true);
     fetchSingleProduct(id);
-
-    setIsLoading(false);
   }, [id]);
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
 
   return (
     <section
@@ -80,9 +80,9 @@ const ProductDetails = ({ closeOverlay }) => {
               </div>
               <div className="flex flex-col gap-y-4">
                 <h1 className="text-xl line-through">${price}</h1>
-                {productDetailsShown && (
-                  <h1 className="text-4xl text-red-600">${finalPrice}</h1>
-                )}
+
+                <h1 className="text-4xl text-red-600">${finalPrice}</h1>
+
                 <p className="text-gray-700">{description}</p>
               </div>
               {/* add to cart button */}

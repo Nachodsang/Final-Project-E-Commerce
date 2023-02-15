@@ -9,8 +9,8 @@ import Sustainable from "../components/Sustainable";
 
 const Home = ({ closeOverlay }) => {
   return (
-    <div className=" bg-gray-200/40 " onClick={closeOverlay}>
-      <Hero />
+    <div>
+      <Hero closeOverlay={closeOverlay} />
       <TopPicked />
       <Campaign />
       <Activities />

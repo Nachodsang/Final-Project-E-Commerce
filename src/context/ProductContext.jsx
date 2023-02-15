@@ -46,14 +46,14 @@ function ProductContextProvider({ children }) {
   const [filteredCategoryList, setFilteredCategoryList] = useState([]);
   // selected Category
   const [productDetailsShown, setProductDetailShown] = useState({});
-  // images for detail page
-  const [imgs, setImgs] = useState([]);
+
   // filtered product shown in search page
   const [filteredProductsForSearch, setFilteredProductsForSearch] = useState(
     []
   );
 
   // fetch product function
+  // used in search page and overlay search panel
   const fetchProduct = async (url) => {
     setIsLoading(true);
     try {
@@ -66,6 +66,7 @@ function ProductContextProvider({ children }) {
     setIsLoading(false);
   };
   // fetch random category function
+  // used in toppicked section
   const fetchRandomCategory = async (url) => {
     setIsLoading(true);
     try {
@@ -90,28 +91,19 @@ function ProductContextProvider({ children }) {
     setIsLoading(false);
   };
   // filter category
+  // used in category page
   const filterCategory = (selectedCategory) => {
     setFilteredCategoryList([]);
-    const subCategory = categoryGroup[selectedCategory].map((item) => {
+    // loop over newly grouped category and fetch each subcategory in the group
+    categoryGroup[selectedCategory].map((item) => {
       fetchEachCategory(item);
     });
   };
 
   // fetch sub category
-  const fetchSubCategory = async (selectedCategory) => {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(
-        `https://dummyjson.com/products/category/${selectedCategory}?limit=0`
-      );
-      const data = response?.data?.products;
-      setFilteredCategoryList(data);
-    } catch (err) {
-      console.log(err.message);
-    }
-    setIsLoading(false);
-  };
+
   // fetchEachCatagory
+  // by the filter category function
   const fetchEachCategory = async (selectedCategory) => {
     setIsLoading(true);
     try {
@@ -133,12 +125,28 @@ function ProductContextProvider({ children }) {
       const data = response?.data;
       setProductDetailShown(data);
       fetchSubCategory(data.category);
-      setImgs(data.images);
     } catch (err) {
       console.log(err.message);
     }
   };
 
+  // not used anywhere
+  const fetchSubCategory = async (selectedCategory) => {
+    setIsLoading(true);
+    try {
+      const response = await axios.get(
+        `https://dummyjson.com/products/category/${selectedCategory}?limit=0`
+      );
+      const data = response?.data?.products;
+      setFilteredCategoryList(data);
+    } catch (err) {
+      console.log(err.message);
+    }
+    setIsLoading(false);
+  };
+
+  // fetch all product when refreshed
+  // random category for toppicked when refreshed
   useEffect(() => {
     fetchProduct(URL);
     fetchRandomCategory(categories);
@@ -159,7 +167,7 @@ function ProductContextProvider({ children }) {
         fetchSingleProduct,
         fetchEachCategory,
         fetchSubCategory,
-        imgs,
+
         filteredProductsForSearch,
         setFilteredProductsForSearch,
         isLoading,

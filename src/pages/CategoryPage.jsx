@@ -15,7 +15,7 @@ import { HeaderContext } from "../context/HeaderContext";
 const CategoryPage = ({ closeOverlay }) => {
   // header context
 
-  const { filteredCategoryList, filterCategory, isLoading } =
+  const { filteredCategoryList, filterCategory, isLoading, setIsLoading } =
     useContext(ProductContext);
   const { id } = useParams();
   //   list to be used in filter panel
@@ -27,6 +27,12 @@ const CategoryPage = ({ closeOverlay }) => {
   useEffect(() => {
     setListState(filteredCategoryList);
   }, [filteredCategoryList]);
+
+  // islodin state from the start
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
+
   return (
     <section onClick={closeOverlay} className="  pb-[500px]">
       <ScrollToTop />

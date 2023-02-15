@@ -7,9 +7,10 @@ import { HeaderContext } from "../context/HeaderContext";
 import { FiChevronRight } from "react-icons/fi";
 import { FaMountain } from "react-icons/fa";
 
-const Hero = () => {
+const Hero = ({ closeOverlay }) => {
   const { setCategoryMenuIsShown, categoryMenuIsShown } =
     useContext(HeaderContext);
+  console.log(categoryMenuIsShown);
   return (
     <section className="h-screen relative">
       Hero
@@ -32,7 +33,7 @@ const Hero = () => {
           <div className="  flex items-center justify-start gap-x-[1px] mt-10 w-[100%] md:w-[60%] lg:text-2xl font-semibold uppercase shadow-xl">
             <div
               onClick={() => setCategoryMenuIsShown(!categoryMenuIsShown)}
-              className="flex-1 py-4 px-2 lg:py-6 bg-white/80 text-center transition-all rounded-sm flex items-center justify-center gap-4 hover:gap-6 hover:bg-primary hover:text-white"
+              className="flex-1 py-4 px-2 lg:py-6 cursor-pointer bg-white/80 text-center transition-all rounded-sm flex items-center justify-center gap-4 hover:gap-6 hover:bg-primary hover:text-white"
             >
               {/* shopping page */}
               <span>shopping</span>

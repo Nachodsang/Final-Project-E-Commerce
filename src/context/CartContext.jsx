@@ -99,7 +99,7 @@ function CartContextProvider({ children }) {
       removeFromCart(id);
     }
   };
-  console.log(confirmIsOpen);
+
   return (
     <CartContext.Provider
       value={{

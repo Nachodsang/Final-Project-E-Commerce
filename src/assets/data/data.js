@@ -102,5 +102,3 @@ export const activities = {
     },
   ],
 };
-
-console.log(activities);

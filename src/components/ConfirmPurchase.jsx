@@ -16,7 +16,7 @@ function ConfirmPurchase() {
   return (
     <div
       className={`${
-        confirmIsOpen ? "top-0 bottom-0 " : "-bottom-full"
+        confirmIsOpen ? "top-0" : "-top-full"
       } bg-black/80 w-screen  h-screen fixed z-50 transition-all duration-700`}
     >
       <div className="frame bg-white h-[300px] w-[400px] m-auto my-[200px] rounded-lg">

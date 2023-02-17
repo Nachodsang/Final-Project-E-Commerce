@@ -11,9 +11,9 @@ module.exports = {
         },
       },
       backgroundImage: {
-        trekking: "url('../src/assets/image/athletic.jpg')",
-        wardrobe: "url('../src/assets/image/wardrobe.jpg')",
-        sustain: "url('../src/assets/image/sustanable.jpg')",
+        trekking: "url('../src/assets/image/athletic1.jpg')",
+        wardrobe: "url('../src/assets/image/wardrobe1.jpg')",
+        sustain: "url('../src/assets/image/sustanable1.jpg')",
       },
     },
   },

@@ -63,7 +63,7 @@ function LogIn() {
                     value={emailState}
                     onChange={handleEmailChange}
                     type="email"
-                    className="border border-gray-300 w-[70%] h-fit rounded-sm outline-none focus:ring focus:ring-accent"
+                    className="border bg-white border-gray-300 w-[70%] h-fit rounded-sm outline-none focus:ring focus:ring-accent"
                   />
                 </div>
                 {/* password */}
@@ -73,7 +73,7 @@ function LogIn() {
                     value={passwordState}
                     onChange={handlePassWordChange}
                     type="password"
-                    className="border border-gray-300 w-[70%] h-fit rounded-sm outline-none focus:ring focus:ring-accent"
+                    className="border bg-white border-gray-300 w-[70%] h-fit rounded-sm outline-none focus:ring focus:ring-accent"
                   />
                 </div>
               </div>

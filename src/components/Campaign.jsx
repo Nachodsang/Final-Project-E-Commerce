@@ -10,11 +10,11 @@ function Campaign() {
   const { setCategoryMenuIsShown, categoryMenuIsShown } =
     useContext(HeaderContext);
   return (
-    <section className="h-screen ">
+    <section className="h-screen mt-10 pb-[200px] ">
       {/* background pic */}
       <div className="w-full relative bg-wardrobe bg-no-repeat bg-cover bg-[15%_10%] md:bg-[0%_10%] h-full z-0">
         {/* overlay */}
-        <div className="z-10 relative top-0 bottom-0 bg-black/30 h-full w-full overflow-hidden">
+        <div className="z-10 relative top-0 bottom-0 bg-yellow-200/10 h-full w-full overflow-hidden">
           {/* text & category wrapper */}
           <div className="flex-col justify-center items-center md:items-start flex relative top-[100px] md:top-[200px] frame lg:top-[100px] ">
             {/* Text */}
@@ -24,9 +24,7 @@ function Campaign() {
               </h1>
               <p className="md:text-2xl text-md lg:text-4xl uppercase font-normal ">
                 Shop the latest fashion, electronics, and household items at
-                unbeatable prices with just a few clicks! Experience the
-                convenience of online shopping from the comfort of your own
-                home.
+                unbeatable prices with just a few clicks!
               </p>
             </div>
             {/* Categorie selection */}

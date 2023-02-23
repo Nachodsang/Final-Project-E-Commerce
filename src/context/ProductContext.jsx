@@ -63,7 +63,6 @@ function ProductContextProvider({ children }) {
     } catch (err) {
       console.log(err.message);
     }
-    setIsLoading(false);
   };
   // fetch random category function
   // used in toppicked section
@@ -74,22 +73,26 @@ function ProductContextProvider({ children }) {
       const categoryList = await response.data;
 
       setCatList(categoryList);
+      const randomedRow = 3;
+      for (let i = 0; i < randomedRow; i++) {
+        // set randomised category
+        const randomIndex = Math.floor(Math.random() * categoryList.length);
+        const randomed = categoryList[randomIndex];
+        setRandomCategory(randomed);
 
-      // set randomised category
-      const randomIndex = Math.floor(Math.random() * categoryList.length);
-      const randomed = categoryList[randomIndex];
-      setRandomCategory(randomed);
-
-      const randomCatResponse = await axios.get(
-        `https://dummyjson.com/products/category/${randomed}?limit=0`
-      );
-
-      setCat(randomCatResponse.data.products);
+        const randomCatResponse = await axios.get(
+          `https://dummyjson.com/products/category/${randomed}?limit=0`
+        );
+        console.log(randomCatResponse.data.products);
+        setCat((prev) => [...prev, randomCatResponse.data.products]);
+      }
     } catch (err) {
       console.log(err.message);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   };
+  console.log(isLoading);
   // filter category
   // used in category page
   const filterCategory = (selectedCategory) => {

@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#0A3C00",
+        primary: "#FEA852",
         accent: {
           DEFAULT: "#FC9826",
-          hover: "#78A22F",
+          hover: "#FBD980",
         },
       },
       backgroundImage: {
@@ -17,5 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

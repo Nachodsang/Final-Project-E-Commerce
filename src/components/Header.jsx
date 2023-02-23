@@ -169,7 +169,7 @@ const Header = ({ closeOverlay }) => {
               </div>
             </div>
             {/* user basket and & search*/}
-            <div className="flex justify-between gap-6 items-center text-2xl ">
+            <div className="flex justify-between md:gap-6 gap-1 items-center text-2xl ">
               <div
                 onClick={handleOpenLogIn}
                 className={`${

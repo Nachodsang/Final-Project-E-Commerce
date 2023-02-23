@@ -17,9 +17,9 @@ const Hero = ({ closeOverlay }) => {
       {/* background pic */}
       <div className="w-full absolute top-0 bg-trekking bg-no-repeat bg-cover bg-[55%_10%] md:bg-[40%_10%] h-full z-0"></div>
       {/* overlay */}
-      <div className="z-10 absolute top-0 bottom-0 bg-black/30 h-full w-full overflow-hidden">
+      <div className="z-10 absolute top-0 bottom-0 bg-yellow-200/50 h-full w-full overflow-hidden">
         {/* text & categorie wrapper */}
-        <div className="flex-col flex relative top-[360px] frame lg:top-[300px] ">
+        <div className="flex-col flex relative top-[360px] frame lg:top-[200px] ">
           {/* Text */}
           <div className="flex flex-col justify-start  z-10 text-white gap-y-4 lg:gap-y-8 ">
             <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold italic uppercase">

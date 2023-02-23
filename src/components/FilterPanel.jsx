@@ -95,7 +95,7 @@ function FilterPanel({
             onChange={(e) => setSearchState(e.target.value)}
             type="text"
             placeholder={searchHolder}
-            className="border outline-none text-center focus:ring focus:ring-accent-hover border-accent rounded-sm placeholder:text-center focus:border-none"
+            className="border outline-none text-center focus:ring bg-white focus:ring-accent-hover border-accent rounded-sm placeholder:text-center focus:border-none"
           />
         </div>
 
@@ -118,14 +118,23 @@ function FilterPanel({
           </div>
         </div>
         {/* subfilter */}
-        {/* title */}
-        <div>
-          <h1 className="text-2xl font-semibold uppercase">Product type</h1>
-          <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-3 gap-4 overflow-auto md:h-[300px] h-[200px] lg:h-[250px]">
+
+        {/* filter dropdown */}
+        <div className="dropdown dropdown-hover ">
+          <label
+            tabIndex={0}
+            className="text-2xl font-semibold cursor-pointer uppercase"
+          >
+            PRODUCT TYPE
+          </label>
+          <ul
+            tabIndex={0}
+            className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
             {/* map newly assigned array to get unique categories */}
             {typeArray.map((item, index) => {
               return (
-                <div
+                <li
                   onClick={() => handleTypeClick(item, index)}
                   key={index}
                   className={`${
@@ -135,10 +144,10 @@ function FilterPanel({
                   } py-2 px-4 border-b-4 border-r-4 shadow-lg transition gap-4 flex items-center cursor-pointer hover:border-accent-hover justify-center`}
                 >
                   <p className="text-center capitalize ">{item}</p>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
         <div className="flex mt-2 justify-center w-full">
           {/* button */}

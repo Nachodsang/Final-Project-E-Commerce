@@ -17,11 +17,11 @@ import Card from "./Card";
 const ItemSlider = ({ category }) => {
   return (
     <Swiper
-      spaceBetween={10}
-      slidesPerView={2}
+      spaceBetween={50}
+      slidesPerView={1}
       breakpoints={{
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
         },
         1024: {
           slidesPerView: 5,
@@ -31,7 +31,7 @@ const ItemSlider = ({ category }) => {
       navigation
       pagination={{ clickable: true }}
     >
-      {category.map((item, index) => {
+      {category?.map((item, index) => {
         // destructure item
         const {
           id,

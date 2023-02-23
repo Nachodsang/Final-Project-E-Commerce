@@ -13,7 +13,7 @@ function Search({ closeOverlay }) {
     <div
       className={`${
         searchIsOpen ? "top-0 right-0" : "-top-full -right-full"
-      } w-[300px] bg-accent/90 transition-all h-screen duration-700 fixed z-30`}
+      } w-[300px] bg-white transition-all h-screen duration-700 fixed z-30`}
     >
       <div className="container py-40">
         <FilterPanel

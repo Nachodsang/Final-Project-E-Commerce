@@ -75,7 +75,9 @@ const ProductDetails = ({ closeOverlay }) => {
             {/* text */}
             <div className="flex flex-col gap-y-6 flex-1">
               <div className="flex flex-col gap-y-4">
-                <h1 className="font-bold text-4xl italic">{title}</h1>
+                <h1 className="font-bold text-4xl italic text-primary">
+                  {title}
+                </h1>
                 <p className="text-xl font-semibold uppercase">{brand}</p>
               </div>
               <div className="flex flex-col gap-y-4">
@@ -100,7 +102,7 @@ const ProductDetails = ({ closeOverlay }) => {
         )}
 
         {/* Suggestion Slider */}
-        <div className="block text-4xl font-bold italic text-center uppercase mt-10 mb-5">
+        <div className="block text-4xl font-bold text-primary italic text-center uppercase mt-10 mb-5">
           You may also like
         </div>
         <ItemSlider category={filteredCategoryList} />

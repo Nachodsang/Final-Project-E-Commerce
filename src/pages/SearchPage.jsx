@@ -16,15 +16,17 @@ function SearchPage({ closeOverlay }) {
       <ScrollToTop />
       <div className="frame flex flex-col justify-center items-start gap-y-10">
         <div className=" flex flex-col justify-center items-end">
-          <h1 className="text-6xl font-bold italic uppercase">Search</h1>
+          <h1 className="text-6xl font-bold italic uppercase text-primary">
+            Search
+          </h1>
           {filteredProductsForSearch.length > 0 && (
             <p className="text-md font-semibold  uppercase">{`${filteredProductsForSearch.length} products`}</p>
           )}
         </div>
         {/* grid section */}
-        <div className="w-full">
+        <div className="w-full  flex justify-center ">
           {filteredProductsForSearch.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
               {filteredProductsForSearch?.map((item, index) => {
                 // destructure item
                 const {

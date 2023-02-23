@@ -40,7 +40,9 @@ const CategoryPage = ({ closeOverlay }) => {
       <div className="frame relative top-60 flex flex-col justify-center items-center">
         {/* title */}
         <div className=" flex flex-col justify-center items-center">
-          <h1 className="text-6xl font-bold italic uppercase">{id}</h1>
+          <h1 className="text-center uppercase text-6xl text-primary font-extrabold italic mb-6">
+            {id}
+          </h1>
           {listState.length > 0 && (
             <p className="text-md font-semibold uppercase">{`${listState.length} products`}</p>
           )}
@@ -66,7 +68,7 @@ const CategoryPage = ({ closeOverlay }) => {
             ) : (
               <div>
                 {listState.length > 0 ? (
-                  <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2  ">
+                  <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 ">
                     {listState.map((item) => {
                       // destructure item
                       const {

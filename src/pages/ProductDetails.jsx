@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+// import sweetalert
+import swal from "sweetalert";
 // import component
 import ItemSlider from "../components/ItemSlider";
 import ScrollToTop from "../components/ScrollToTop";
@@ -36,6 +38,16 @@ const ProductDetails = ({ closeOverlay }) => {
   } = productDetailsShown;
   const finalPrice = (((100 - discountPercentage) / 100) * price).toFixed(2);
 
+  // add to cart function
+  const handleAddToCartClick = (prod, id) => {
+    swal({
+      title: "Item added!",
+      text: "Thankyou for shopping with us!",
+      icon: "success",
+      button: "Aww yiss!",
+    });
+    addToCart(prod, id);
+  };
   useEffect(() => {
     fetchSingleProduct(id);
   }, [id]);
@@ -90,7 +102,7 @@ const ProductDetails = ({ closeOverlay }) => {
               {/* add to cart button */}
               <div className="w-full mt-4">
                 <button
-                  onClick={() => addToCart(productDetailsShown, id)}
+                  onClick={() => handleAddToCartClick(productDetailsShown, id)}
                   className="w-full border-none hover:bg-accent-hover transition-all  bg-primary text-white min-h-6 py-5 uppercase font-bold italic"
                 >
                   add to cart
